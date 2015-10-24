@@ -1,0 +1,14 @@
+<div>
+
+	<select name="userSelect" id="userSelect" ng-model="custId">
+      <option value="">---Your Name---</option> <!-- not selected / blank option -->
+      <option ng-repeat="cust in Customers" value="{{cust.id}}">{{cust.fName}} {{cust.lName}}</option>
+    </select><br>
+
+	<select ng-show="custId != ''" name="accountSelect" id="accountSelect" ng-model="accountNo">
+      <option value="">---Your Account Number---</option> <!-- not selected / blank option -->
+      <option ng-repeat="account in Accounts[custId]" value="{{account}}">{{account}}</option>
+    </select><br>
+
+    <button ng-show="accountNo != ''" ng-click="showAccount()">Go</button>
+</div>

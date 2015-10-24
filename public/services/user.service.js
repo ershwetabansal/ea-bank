@@ -9,7 +9,8 @@
       var availableUserId = 0;
 
     	vm.addUser = function(user){
-        if(user) {
+
+        if(user && user.fName && user.lName && user.postCd && !duplicate(user)) {
           availableUserId++;
           user.id = availableUserId;
           user.date = new Date();
@@ -39,6 +40,15 @@
       }
       vm.getUserAccounts = function(uniqueId) {
         return userArray[uniqueId].accountNo;
+      }
+
+      function duplicate(userObj) {
+        for (var user in userArray) {
+          if (userObj.fName === userArray[user].fName && userObj.lName === userArray[user].lName && userObj.postCd === userArray[user].postCd) {
+            return true;
+          }
+        }
+        return false;
       }
   }
 

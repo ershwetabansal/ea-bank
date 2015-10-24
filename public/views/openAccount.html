@@ -1,0 +1,13 @@
+<div>
+
+	<form>
+		<select name="userSelect" id="userSelect" ng-model="custId">
+      		<option value="">---Please select---</option> <!-- not selected / blank option -->
+      		<option ng-repeat="cust in Customers" value="{{cust.id}}">{{cust.fName}} {{cust.lName}}</option>
+    	</select>
+
+		Currency :<input type="text" ng-model="currency" placeHolder="Currency" required/><br>
+		<button type="submit" value="" ng-click="process()">Process</button>
+	</form>
+
+</div>

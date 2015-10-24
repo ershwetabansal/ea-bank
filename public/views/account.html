@@ -1,0 +1,14 @@
+<div>
+	<h1> Welcome {{user}}</h1> 
+	<label>Account Number : {{accountNo}}</label>
+	<label>Balance : {{amount}}</label>
+	<label>{{currency}}</label>
+	<div>
+		<button ng-click="transactions()">Transactions</button>
+		<button ng-click="deposit()">Deposit</button>
+		<button ng-click="withdrawl()">Withdrawl</button>
+	</div>
+	<div class="container-fluid mainBox" ui-view>
+	</div>
+
+</div>
