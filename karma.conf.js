@@ -16,14 +16,15 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'public/bower_components/angular/angular.js',
+      'public/bower_components/angular-ui-router/release/angular-ui-router.min.js',
       'public/bower_components/angular-mocks/angular-mocks.js',
       'public/app.js',
       'public/services/account.service.js',
-      'public/services/account.serviceSpec.js',
+      'public/tests/account.serviceSpec.js',
       'public/services/user.service.js',
-      'public/services/user.serviceSpec.js',
+      'public/tests/user.serviceSpec.js',
       'public/services/transaction.service.js',
-      'public/services/transaction.serviceSpec.js'
+      'public/tests/transaction.serviceSpec.js'
     ],
 
 

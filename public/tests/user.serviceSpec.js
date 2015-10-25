@@ -81,4 +81,22 @@ describe('Bank User Service Testing.', function() {
     });
   });
 
+  describe('delete functionality',function() {
+    var uniqueId;
+    
+    beforeEach(function(){
+      var user = {fName : "Harry", lName : "Potter", postCd : "E725JB"};
+      uniqueId = service.addUser(user);
+    });
+
+    it('should check the existence of user.', function() {
+        var user = service.getUser(uniqueId);
+        expect(user).toBeDefined();
+
+        service.deleteUser(uniqueId);
+
+        user = service.getUser(uniqueId);
+        expect(user).not.toBeDefined();
+    });
+  }); 
 });
