@@ -3,34 +3,34 @@
 }
 @media screen and (min-width: 480px) {
 .box {
-  width:80%;
+  width:90%;
   }
 .fixedTopBox , .fixedBottomBox {
-  width:76%;
+  width:80%;
   }
 }
 @media screen and (min-width: 768px) {
 .box {
-  width:60%;
+  width:70%;
   }
 .fixedTopBox , .fixedBottomBox {
-  width:56%;
+  width:65%;
   }
 }
 @media screen and (min-width: 1024px) {
 .box {
-  width:50%;
+  width:60%;
   }
 .fixedTopBox , .fixedBottomBox {
-  width:46%;
+  width:55%;
   }
 }
 @media screen and (min-width: 1200px) {
 .box {
-  width:40%;
+  width:50%;
   }
 .fixedTopBox , .fixedBottomBox {
-  width:36%;
+  width:45%;
   }
 }
 body {

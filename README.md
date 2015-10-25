@@ -22,7 +22,7 @@ Run $ npm install
 Run $ node server/index.js
 Open http://localhost:3000/bank in your browser.
 
-Alternatively check plunker http://plnkr.co/edit/6DBKfb?p=preview
+Alternatively check plunker http://plnkr.co/edit/3oZYct?p=preview or http://run.plnkr.co/plunks/3oZYct/
 
 Instructions - 
 1) With Manager login, customers can be added and accounts can be opened.
