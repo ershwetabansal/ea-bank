@@ -1,9 +1,17 @@
-<div class="borderM box">
-	<div class="center"><strong> Welcome <span class="fontBig">{{user}}</span> !!</strong></div> <br>
-	<div class="center">Account Number : <strong>{{accountNo}} </strong>, 
+<div class="borderM box padT20">
+	<div><strong> Welcome <span class="fontBig">{{user}}</span> !!</strong>
+	<span ng-show="noAccount">Please open an account with us.</span>
+	<select ng-hide="noAccount" style="margin-left:10px"  ng-options="account for account in Accounts" name="accountSelect" id="accountSelect" ng-model="accountNo" ng-change="selectAcct()">
+		
+	</select>
+
+	</div> <br>
+	<div ng-hide="noAccount" class="center">Account Number : <strong>{{accountNo}} </strong>, 
 	Balance : <strong>{{amount}}</strong> , 
 	Currency : <strong>{{currency}}</strong></div><br>
-	<div class="center">
+	
+	
+	<div ng-hide="noAccount" class="center">
 		<button ng-class="btnClass1" class="btn btn-lg tab" ng-click="transactions()">Transactions
 		<b ng-show="btnClass1 === 'btn-primary'" id="notch" class="notch"></b>
 		</button>
@@ -14,10 +22,9 @@
 		<button ng-class="btnClass3" class="btn btn-lg tab" ng-click="withdrawl()">Withdrawl
 		<b ng-show="btnClass3 === 'btn-primary'" id="notch" class="notch"></b>
 		</button>
-		<img src="assets/Reset.png" ng-click="reset()" width="40px" height="40px"></img>
 		
 	</div>
-	<div class="container-fluid mainBox" ui-view>
+	<div ng-show="accountNo != ''" class="container-fluid mainBox" ui-view>
 	</div>
 
 </div>

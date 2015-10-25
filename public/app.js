@@ -7,3 +7,4 @@ function bodyCtrl ($scope,$state,mockLoader) {
 	$state.transitionTo('main.options');
 }
 bodyCtrl.$inject = ['$scope','$state','mockLoader'];
+

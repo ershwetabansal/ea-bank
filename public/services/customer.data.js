@@ -16,26 +16,25 @@
     	};
 
       vm.getUser = function() {
-        if (typeof(customer) !== "undefined") return customer;
-        else {
+        if (typeof(customer) === "undefined") {
           var obj =localStorage.getItem('CurrentUser');
-          if (obj) return JSON.parse(obj);
+          if (obj) customer = JSON.parse(obj);
         }
+        return customer;
       }
 
       vm.setAccount = function(acct){
         account = acct;
-        $timeout(function() {
-          localStorage.setItem('CurrentAccount',JSON.stringify(account));
-        }, 0);
+        if (typeof(account) !== "undefined") localStorage.setItem('CurrentAccount',JSON.stringify(account));
+          else localStorage.removeItem('CurrentAccount');
       };
 
       vm.getAccount = function() {
-        if(typeof(account) !== "undefined") return account;
-        else {
+        if(typeof(account) === "undefined") {
           var obj =localStorage.getItem('CurrentAccount');
-          if (obj) return JSON.parse(obj);
+          if (obj) account = JSON.parse(obj);
         }
+         return account;
       }
 
   }

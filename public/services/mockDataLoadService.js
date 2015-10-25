@@ -21,8 +21,7 @@
         var acctObj = (localStorage.getItem("Account"));
         var txObj = (localStorage.getItem("Transaction"));
 
-        console.log("User Object :"+userObj);
-        if (userObj && acctObj) {
+        if (userObj && acctObj && userObj != null && acctObj != null) {
           User.loadObject(JSON.parse(userObj));
           Account.loadObject(JSON.parse(acctObj));
           if (txObj) {
@@ -35,8 +34,19 @@
             Account.createAccount(userId,"Pound");
             Account.createAccount(userId,"Rupee");
           }   
+          //Adding tranactions for only 1 user
+          var userId = User.getUsers()[0].id;
+          var accountNo = User.getUserAccounts(userId)[0];
+          for (var i=0; i<=6;i++) {
+            for (var j=1; j<=28 ; j++) {
+              var date = new Date(2015,i,j);
+              Transaction.addTransaction(userId,accountNo,30,4,date);              
+            }
+          }     
+
           User.saveObj();
-          Account.saveObj();     
+          Account.saveObj();
+          Transaction.saveObj();
         }
     	};
 

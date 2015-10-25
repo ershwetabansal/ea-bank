@@ -5,20 +5,32 @@
 .box {
   width:80%;
   }
+.fixedTopBox , .fixedBottomBox {
+  width:76%;
+  }
 }
 @media screen and (min-width: 768px) {
 .box {
   width:60%;
+  }
+.fixedTopBox , .fixedBottomBox {
+  width:56%;
   }
 }
 @media screen and (min-width: 1024px) {
 .box {
   width:50%;
   }
+.fixedTopBox , .fixedBottomBox {
+  width:46%;
+  }
 }
 @media screen and (min-width: 1200px) {
 .box {
   width:40%;
+  }
+.fixedTopBox , .fixedBottomBox {
+  width:36%;
   }
 }
 body {
@@ -62,10 +74,25 @@ body {
 }
 .tbStruct {
     max-height: 100%;
-    overflow: scroll;
+    overflow: hidden;
 }
 .tab {
     position: relative;
+}
+.fixedTopBox , .fixedBottomBox {
+    position:fixed;
+    background-color:white;
+    z-index:5;
+}
+.fixedTopBox {
+    padding-top: 20px;
+    padding-bottom: 5px;
+    border-bottom :2px solid #DCDCDC;
+}
+.fixedBottomBox {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-top :2px solid #DCDCDC;
 }
 .notch {
     position: absolute;
@@ -79,11 +106,13 @@ body {
     position: relative;
     border: 2px solid #DCDCDC;
     border-radius:5px;
-    padding:20px;
+    padding:0 20px;
     margin : 0 auto;
     background-color: white;
     min-height :400px;
     height : 100%;
     margin-top : 20px;
-
+}
+.padT20 {
+    padding-top: 20px;
 }
