@@ -1,13 +1,24 @@
 <div>
 
-	<form>
-		<select name="userSelect" id="userSelect" ng-model="custId">
-      		<option value="">---Please select---</option> <!-- not selected / blank option -->
-      		<option ng-repeat="cust in Customers" value="{{cust.id}}">{{cust.fName}} {{cust.lName}}</option>
-    	</select>
+	<div class="marTop">
+	<form role="form" name="myForm" ng-submit="process()">
+		<div class="form-group"><label>Customer :</label>
+			<select class="form-control" name="userSelect" id="userSelect" ng-model="custId" required>
+	      		<option value="">---Customer Name---</option> <!-- not selected / blank option -->
+	      		<option ng-repeat="cust in Customers" value="{{cust.id}}">{{cust.fName}} {{cust.lName}}</option>
+	    	</select>
+    	</div>
+    	<div class="form-group"><label>Currency :</label>
+    		<select class="form-control" name="currency" id="currency" ng-model="currency" required>
+	      		<option value="">---Currency---</option> <!-- not selected / blank option -->
+	      		<option value="Dollar">Dollar</option>
+	      		<option value="Pound">Pound</option> 
+	      		<option value="Rupee">Rupee</option>
+	    	</select>
+		</div>
+		<button type="submit" value="" >Process</button>
 
-		Currency :<input type="text" ng-model="currency" placeHolder="Currency" required/><br>
-		<button type="submit" value="" ng-click="process()">Process</button>
 	</form>
+</div>
 
 </div>

@@ -1,11 +1,45 @@
-<div>
+<div class="marTop tbStruct">
 
-	
-	<div ng-repeat="tx in transactions"> 
-		<label>{{tx.fmtDate}}</label>
-		<label>{{tx.time}}</label>
-		<label>{{tx.amount}}</label>
-		<label>{{tx.type}}</label>
-		<label>{{tx.success}}</label>
+<!-- 	  <form>
+	    <div class="form-group">
+	      <div class="input-group">
+	        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+	        <input type="text" class="form-control" placeholder="Search Customer" ng-model="searchCustomer">
+	      </div>      
+	    </div>
+	  </form> -->
+
+	<table class="table table-bordered table-striped">
+    
+    <thead>
+      <tr>
+        <td>
+          <a href="#" ng-click="sortType = 'date'; sortReverse = !sortReverse">
+            Date-Time
+            <span ng-show="sortType == 'date' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'date' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a>Amount</a>
+        </td>
+        <td>
+          <a>Transaction Type</a>
+        </td>
+        
+      </tr>
+    </thead>
+    
+    <tbody>
+    	
 	</div>
+      <tr ng-repeat="tx in transactions | orderBy:sortType:sortReverse">
+        <td>{{ tx.dateTime }}</td>
+        <td>{{ tx.amount }}</td>
+        <td>{{ tx.type }}</td>
+      </tr>
+    </tbody>
+    
+  </table>
+
 </div>

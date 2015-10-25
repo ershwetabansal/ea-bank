@@ -41,7 +41,14 @@
       vm.getUserAccounts = function(uniqueId) {
         return userArray[uniqueId].accountNo;
       }
-
+      vm.loadObject = function(obj){
+        userArray = obj;
+        availableUserId = localStorage.getItem('maxUserId');
+      }
+      vm.saveObj = function() {
+        localStorage.setItem('User',JSON.stringify(userArray));
+        localStorage.setItem('maxUserId',availableUserId);
+      }
       function duplicate(userObj) {
         for (var user in userArray) {
           if (userObj.fName === userArray[user].fName && userObj.lName === userArray[user].lName && userObj.postCd === userArray[user].postCd) {

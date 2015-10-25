@@ -1,9 +1,11 @@
-<div>
-
-	<div>
-		<button ng-click="home()">Home</button>
+<div class="container-fluid">
+	<div class="box mainhdr">
+		<img src="assets/home_icon.png" class="btn home" ng-click="home()"></img>
+		<strong class="mainHeading">XYZ Bank</strong>
+		<img ng-show="logout" src="assets/logout.png" class="btn logout" ng-click="byebye()" width="50px" height="40px"></img>
+		
 	</div>
-	<div class="container-fluid mainBox" ui-view>
+	<div ui-view>
 	</div>
 
 </div>

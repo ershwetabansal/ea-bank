@@ -1,12 +1,21 @@
-<div>
-	<h1> Welcome {{user}}</h1> 
-	<label>Account Number : {{accountNo}}</label>
-	<label>Balance : {{amount}}</label>
-	<label>{{currency}}</label>
-	<div>
-		<button ng-click="transactions()">Transactions</button>
-		<button ng-click="deposit()">Deposit</button>
-		<button ng-click="withdrawl()">Withdrawl</button>
+<div class="borderM box">
+	<div class="center"><strong> Welcome <span class="fontBig">{{user}}</span> !!</strong></div> <br>
+	<div class="center">Account Number : <strong>{{accountNo}} </strong>, 
+	Balance : <strong>{{amount}}</strong> , 
+	Currency : <strong>{{currency}}</strong></div><br>
+	<div class="center">
+		<button ng-class="btnClass1" class="btn btn-lg tab" ng-click="transactions()">Transactions
+		<b ng-show="btnClass1 === 'btn-primary'" id="notch" class="notch"></b>
+		</button>
+		
+		<button ng-class="btnClass2" class="btn btn-lg tab" ng-click="deposit()">Deposit
+		<b ng-show="btnClass2 === 'btn-primary'" id="notch" class="notch"></b>
+		</button>
+		<button ng-class="btnClass3" class="btn btn-lg tab" ng-click="withdrawl()">Withdrawl
+		<b ng-show="btnClass3 === 'btn-primary'" id="notch" class="notch"></b>
+		</button>
+		<img src="assets/Reset.png" ng-click="reset()" width="40px" height="40px"></img>
+		
 	</div>
 	<div class="container-fluid mainBox" ui-view>
 	</div>

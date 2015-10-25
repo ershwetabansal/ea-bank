@@ -1,14 +1,20 @@
-<div>
+<div class="borderM box">
 
-	<select name="userSelect" id="userSelect" ng-model="custId">
-      <option value="">---Your Name---</option> <!-- not selected / blank option -->
-      <option ng-repeat="cust in Customers" value="{{cust.id}}">{{cust.fName}} {{cust.lName}}</option>
-    </select><br>
+<form role="form" name="myForm" ng-submit="showAccount()">
+	<div class="form-group"><label>Your Name :</label>
+		<select class="form-control" name="userSelect" id="userSelect" ng-model="custId">
+	      <option value="">---Your Name---</option> <!-- not selected / blank option -->
+	      <option ng-repeat="cust in Customers" value="{{cust.id}}">{{cust.fName}} {{cust.lName}}</option>
+	    </select>
+	</div>
 
-	<select ng-show="custId != ''" name="accountSelect" id="accountSelect" ng-model="accountNo">
-      <option value="">---Your Account Number---</option> <!-- not selected / blank option -->
-      <option ng-repeat="account in Accounts[custId]" value="{{account}}">{{account}}</option>
-    </select><br>
+    <div ng-show="custId != ''" class="form-group"><label>Your Account Number :</label>
+		<select class="form-control"  name="accountSelect" id="accountSelect" ng-model="accountNo">
+	      <option value="">---Your Account Number---</option> <!-- not selected / blank option -->
+	      <option ng-repeat="account in Accounts[custId]" value="{{account}}">{{account}}</option>
+	    </select>
+	</div>
 
-    <button ng-show="accountNo != ''" ng-click="showAccount()">Go</button>
+    <button class="btn btn-default" type="submit" ng-show="accountNo != ''">Login</button>
+  </form>
 </div>
