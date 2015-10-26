@@ -10,7 +10,7 @@
                     if (!txObj.success) {
                         $scope.message = "Transaction Failed. You can not withdraw amount more than the balance.";
                     } else {
-                        $scope.message = "Transaction successful";
+                        $scope.message = "Transaction successful.";
                         $scope.$emit('amountChg');
                     } 
                     $scope.amount = "";

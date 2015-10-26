@@ -19,12 +19,11 @@ module.exports = function(config) {
       'bower_components/angular-ui-router/release/angular-ui-router.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'public/app.js',
-      'public/services/account.service.js',
-      'public/tests/account.serviceSpec.js',
-      'public/services/user.service.js',
-      'public/tests/user.serviceSpec.js',
-      'public/services/transaction.service.js',
-      'public/tests/transaction.serviceSpec.js'
+      'public/config/config.js',
+      'public/services/*.js',
+      'public/tests/**/*Spec.js',
+      'public/controllers/*.js'
+
     ],
 
 
