@@ -1,28 +1,17 @@
-Purpose : A bank account application using Angular.js
-A simple bank account application that allows the fictitious ‘EA
-Bank’ to create customers, who can have a balance in a given currency. Customer can
-also use the system to add and remove amounts to and from their account. Once a
-deposit or withdrawal takes place, it should be listed along with the date and time the
-transaction took place.
+## Purpose : 
+A bank account application using Angular.js. A simple bank account application that allows the fictitious ‘EA Bank’ to create customers, who can have a balance in a given currency. Customer can also use the system to add and remove amounts to and from their account. Once a
+deposit or withdrawal takes place, it should be listed along with the date and time the transaction took place.
 
-Used Technology
+## Used Technology :
+* Angular.js for client side code 
+* node.js for server side
+* Jasmine and Karma for testing
 
-1) Angular.js for client side code 
-2) node.js to start server 
-3) Jasmine to test the service 
-4) Karma to run test cases
-
-
-$ bower install
-$ npm install
-$ karma start to test the services
-
-To run application
-Run $ npm install
-Run $ node server/index.js
-Open http://localhost:3000/bank in your browser.
-
-Alternatively check plunker http://plnkr.co/edit/3oZYct?p=preview or http://run.plnkr.co/plunks/3oZYct/
+## Installation steps :
+* npm install
+* node server/index.js
+* Open http://localhost:3000/bank in your browser.
+* Alternatively check plunker http://plnkr.co/edit/3oZYct?p=preview or http://run.plnkr.co/plunks/3oZYct/
 
 Instructions - 
 1) With Manager login, customers can be added and accounts can be opened.
